@@ -1,26 +1,29 @@
-  <?xml version="1.0" encoding="UTF-8"?>
-    <plugin xmlns="http://www.w3.org/ns/widgets"
-            id="com.example.CordovaPlugin" version="0.0.1">
-        <name>Echo</name>
-        <description>Cordova Device Plugin</description>
-        <license>Apache 2.0</license>
-        <keywords>cordova,device</keywords>
-	<asset src="www/echo.js" target="js/echo.js"/>
-	 <js-module src="www/echo.js" name="echo">
-    	 <clobbers target="echo" />
-  	 </js-module>
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.example.hello"
+        version="0.7.0">
 
+  <name>Hello</name>
 
-        <platform name="android">
-             <config-file target="res/xml/config.xml" parent="/*">
-                <feature name="Echo">
-                    <param name="android-package" value="com.example.CordovaPlugin.Echo"/>
-                </feature>
-            </config-file>
-	            
-	<source-file src="src/android/Echo.java" target-dir="src/com/example/CordovaPlugin/"/>
-  	</platform>
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
 
+  <asset src="www/hello.js" target="js/hello.js"/>
 
-        
-    </plugin>
+  <js-module src="www/hello.js" name="hello">
+    <clobbers target="hello" />
+  </js-module>
+
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Hello">
+        <param name="android-package" value="com.example.plugin.Hello"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/Hello.java" target-dir="src/com/example/plugin/"/>
+  </platform>
+
+</plugin>
