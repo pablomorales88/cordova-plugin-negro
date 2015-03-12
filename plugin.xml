@@ -1,0 +1,16 @@
+  <?xml version="1.0" encoding="UTF-8"?>
+    <plugin xmlns="http://www.w3.org/ns/widgets"
+            id="com.CordovaPlugin" version="0.0.1">
+        <name>loglevel</name>
+        <description>Cordova Device Plugin</description>
+        <license>Apache 2.0</license>
+        <keywords>cordova,device</keywords>
+        <platform name="android">
+            <config-file target="config.xml" parent="/*">
+                <feature name="Echo">
+                    <param name="indroid-package" value="org.apache.cordova.plugin.Echo"/>
+                </feature>
+            </config-file>
+            
+        </platform>
+    </plugin>
