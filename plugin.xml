@@ -1,36 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
-<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-        id="com.example.hello"
-        version="0.7.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin 
+	xmlns="http://apache.org/cordova/ns/plugins/1.0"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	id="com.patoman007.cordova.blue2"
+	version="1.1.0" >
 
-  <name>Hello</name>
+	<name>Blue2</name>
+	<description>Android Bluetooth Plugin</description>
+	<license>Apache 2.0</license>
+	<keywords>Cordova, Android, Bluetooth</keywords>
 
-  <engines>
-    <engine name="cordova" version=">=3.4.0"/>
-  </engines>
+	<engines>
+		<engine name="cordova" version=">=3.1.0" />
+	</engines>
 
-  <asset src="www/hello.js" target="js/hello.js"/>
+	<js-module src="www/blue2.js" name="Blue2">
+		<clobbers target="Blue2" />
+	</js-module>
 
-  <js-module src="www/hello.js" name="hello">
-    <clobbers target="hello" />
-  </js-module>
+	<!-- android -->
+	<platform name="android">
+		<!-- Add plugin android/cordova xml -->
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="Blue2" >
+				<param name="android-package" value="com.patoman007.cordova.blue2.Blue2"/>
+			</feature>
+		</config-file>
 
-  <platform name="android">
+		<!-- Android manifest -->
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-permission android:name="android.permission.BLUETOOTH" />
+    	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+		</config-file>
 
-    <config-file target="res/xml/config.xml" parent="/*">
-      <feature name="Hello">
-        <param name="android-package" value="com.example.plugin.Hello"/>
-      </feature>
-    </config-file>
-
-    <config-file target="AndroidManifest.xml" parent="/manifest">
-      <uses-permission android:name="android.permission.BLUETOOTH"/>
-      <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-      
-    </config-file>
-
-
-    <source-file src="src/android/Hello.java" target-dir="src/com/example/plugin/"/>
-  </platform>
+		<source-file src="src/android/Blue2.java" 
+			target-dir="src/com/patoman007/cordova/blue2" />
+	</platform>
 
 </plugin>
