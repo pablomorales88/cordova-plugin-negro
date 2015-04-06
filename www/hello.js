@@ -21,7 +21,11 @@ module.exports = {
     },
     escribir: function (name, successCallback, errorCallback) {
         cordova.exec(successCallback, errorCallback, "Hello", "escribir", [name]);//service= "Hello" // action="greet"
+    },
+    isEnable: function (name, successCallback, errorCallback) {
+        cordova.exec(successCallback, errorCallback, "Hello", "isEnable", [name]);//service= "Hello" // action="greet"
     }
+
 
 
 
